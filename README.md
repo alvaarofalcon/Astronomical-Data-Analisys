@@ -53,26 +53,26 @@ Here I'll detail the procedure carried out in any project:
 * **Process:**
     1.  **Processing of images:** I stacked many images in order to amplify the signal/noise relation.
     2.  **Isophotes fit:** I used `photutils` in order to fit a series of concentric ellipses (isophotes) to the galaxy profile, extracting parameters like intensity, ellipticity and angular position.
-    3.  **Data transform and modelling:** It was calculated the superficial brillance (µ) and it was plotted against the semimajor-axis (r^(1/4)) in order to verify if the linear relation was valid as the De Vaucouleurs law predicts.
-    4.  **Calculation of Physical parameters:** From the parameters obtained from the linear regression, I calculated the effective radius and the effective surface brillance.
+    3.  **Data transform and modelling:** It was calculated the superficial brightness (µ) and it was plotted against the semimajor-axis (r^(1/4)) in order to verify if the linear relation was valid as the De Vaucouleurs law predicts.
+    4.  **Calculation of Physical parameters:** From the parameters obtained from the linear regression, I calculated the effective radius and the effective surface brightness.
 * **Libraries:** `Photutils`, `Astropy`, `CCDProc`, `NumPy`, `Matplotlib`.
 
 ### 5. Creation of a Color-Magnitude diagram.
 * **File:** `ColorMagnitude.ipynb`
-* **Objective:** Build an H-R diagram (a fundamental graph in Astrophysics) for a cluster of stars, which allows identify it's principal sequence and it's evolutive stage.
+* **Objective:** Build an H-R diagram (a fundamental graph in Astrophysics) for a cluster of stars, which allows identify its principal sequence and its evolutive stage.
 * **Process:**
     1.  **Alignment and combination:** The images taken with two different filters (band B and V) were alligned (with linear transformations carried out by Astroalign) and combined in order to improve the quality.
-    2.  **(Data Joining):** The stars were extracted from both final combined images. Then, a "join" of the two catalogues was made, asocciating each star of the image B with it correspondent at V based in it's coordinates.
-    3.  **Calibration and Feature Engineering:** The instrumental magnitudes were calibrated using a reference star with a well known bright. A color index (B-V) was created.
+    2.  **(Data Joining):** The stars were extracted from both final combined images. Then, a "join" of the two catalogues was made, asocciating each star of the image B with its correspondent at V based in it's coordinates.
+    3.  **Calibration and Feature Engineering:** The instrumental magnitudes were calibrated using a reference star with a well known brightness. A color index (B-V) was created.
     4.  **Visualization:** The final result is a dispersion diagram which shows the absolute magnitude against the color index, showing the structure of the cluster.
 * **Libraries** `Astroalign`, `CCDProc`, `Pandas`, `Astropy`, `NumPy`, `Matplotlib`.
 
 ### 6. Determination of an Asteroid's Orbit
 * **File:** `asteroide.ipynb`
-* **Objective:** Calculate the trajectorie and the orbital parameters of an asteroid from a series of images taken through the time (i.e. observing the movement of the asteorid in the sky).
+* **Objective:** Calculate the trajectory and the orbital parameters of an asteroid from a series of images taken through the time (i.e. observing the movement of the asteroid in the sky).
 * **Process:**
     1.  **Temporal Series Analysis:** The coordinates (X, Y) of the asteroid and two reference stars were extracted from 41 images, creating a dataset of temporal series of position.
-    2.  **Coordinates transformation:** The transformation from pixel coordinates (X, Y) to celestial coordinates was carried out using the ecuations well known from the astronomy.
-    3.  **Motion modeling:** A linear regression was carried out on the celestial coordinates in function of the time in order to determine the asteroid's angular velocity in both directions (µ_α y µ_δ).
+    2.  **Coordinates transformation:** The transformation from pixel coordinates (X, Y) to celestial coordinates was carried out using the equations well known from the astronomy.
+    3.  **Motion modeling:** A linear regression was carried out on the celestial coordinates in function of the time in order to determine the asteroid's angular velocity in both directions (µ_α and µ_δ).
     4.  **Resolution of the System of equations:** Using `SymPy`, it was solved a system of non-linear equations based on the orbital mechanics in order to determine the distance and the radial velocity of the asteroid. Finally, parameters like orbit's inclination and the longitude of the ascending node were calculated.
 * **Libraries:** `SymPy`, `Pandas`, `NumPy`, `Matplotlib`, `Astropy`.
