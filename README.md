@@ -20,7 +20,7 @@ Through these projects I used the following libraries and tools oriented to data
 Here I'll detail the procedure carried out in any project:
 
 ### 1. The calibration: The "data cleaning" in astronomy
-* **File:** `MasterFlat.ipynb`
+* **File:** `MasterFlat.ipynb` (author: Valerio Bozza)
 * **Objective:** This is the fundamental cleaning of the data contained in images. Before the analysis, it's crucial to clean the systematic noise and the 'signature' of the instrument. This process is analog to any other process of the cleaning and pre-processing of the data, and one has to do this with each image taken from a telescope.
 * **The process:**
     1.  **Noise reduction (BIAS/Dark):** I combined multiple images of `BIAS` and `dark frames` in order to create a "master dark", that has the thermal and the sensor noise of the entire instrument.
